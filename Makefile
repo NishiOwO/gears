@@ -23,6 +23,7 @@ pack: all
 	mkdir -p packed/lib
 	cp src/gears$(EXEC) packed/bin/
 	-cp deps/lib/*.so packed/lib/
+	-cp -rf deps/lib/tcl8.6 packed/lib/tcl8.6
 	-cp deps/lib/*.dll packed/bin/
 
 clean:
