@@ -14,4 +14,4 @@ gears$(EXEC): $(OBJS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f gears$(EXEC) *.o */*.o
+	rm -f gears gears.exe *.o */*.o

@@ -26,6 +26,7 @@ int main(int argc, char** argv){
 	while(!WindowShouldClose()){
 		BeginDrawing();
 		ClearBackground((Color){0, 0, 0, 255});
+		DrawRectangleV(GetMousePosition(), (Vector2){50, 50}, (Color){255, 0, 0, 255});
 		/* todo */
 		EndDrawing();
 	}

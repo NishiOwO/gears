@@ -1,6 +1,8 @@
 PLATFORM = generic
 
-.PHONY: all clean ./src ./deps
+include ./config.mk
+
+.PHONY: all clean pack ./src ./deps
 
 all: ./src
 
@@ -11,7 +13,19 @@ all: ./src
 	$(MAKE) -C $@
 
 ./deps:: ./config.mk
-	$(MAKE) -C $@
+	mkdir -p ./deps/include
+	mkdir -p ./deps/lib
+	if $(BUILD_DEPS); then $(MAKE) -C $@ ; fi
+
+pack: all
+	rm -rf packed
+	mkdir -p packed/bin
+	mkdir -p packed/lib
+	cp src/gears$(EXEC) packed/bin/
+	-cp deps/lib/*.so packed/lib/
+	-cp deps/lib/*.dll packed/bin/
 
 clean:
 	$(MAKE) -C ./src clean
+	$(MAKE) -C ./deps clean
+	rm -rf packed
