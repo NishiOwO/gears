@@ -3,19 +3,27 @@
 #include <stdio.h>
 
 #include <raylib.h>
+#include <tcl.h>
 
 int main(int argc, char** argv){
 	int st;
 
 	printf("Initializing Gears\n");
 
-    InitWindow(1024, 768, "Gears");
-    if(!IsWindowReady()){
+	printf("Initializing raylib\n");
+	
+	InitWindow(1024, 768, "Gears");
+	if(!IsWindowReady()){
 		fprintf(stderr, "Window creation failure\n");
 		return 1;
 	}
 	SetExitKey(KEY_NULL);
 	SetTargetFPS(60);
+
+	printf("Initializing Tcl/Tk\n");
+	Tcl_FindExecutable(argv[0]);
+
+	printf("Initializing engine\n");
 
 	st = engine_init();
 	if(st != 0){

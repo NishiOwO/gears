@@ -26,6 +26,7 @@ pack: all
 	-cp deps/lib/*.so packed/lib/
 	-cp -rf deps/lib/tcl8.6 packed/lib/tcl8.6
 	-cp deps/lib/*.dll packed/bin/
+	-cp deps/bin/*.dll packed/bin/
 
 clean:
 	$(MAKE) -C ./src clean TOP="`pwd`"
