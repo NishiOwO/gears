@@ -1,4 +1,7 @@
 /config.mk
 *.o
+/deps/bin
+/deps/lib
+/deps/include
 /src/gears
 /src/gears.exe

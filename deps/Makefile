@@ -47,4 +47,4 @@ build-tcl: ./tcl$(TCLTK_VERSION_FULL)-src.tar.gz
 	tar xzvf $@
 
 clean:
-	rm -rf include lib raylib-* tcl* *.timestamp
+	rm -rf include lib bin raylib-* tcl* *.timestamp
