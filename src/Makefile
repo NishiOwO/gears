@@ -1,6 +1,6 @@
 include ../config.mk
 
-OBJS = main.o engine/core.o engine/log.o
+OBJS = main.o engine/core.o engine/log.o engine/util.o
 
 .PHONY: all clean
 .SUFFIXES: .c .o
@@ -11,7 +11,7 @@ gears$(EXEC): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
 .c.o:
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -DPREFIX='"$(PREFIX)"' -c -o $@ $<
 
 clean:
 	rm -f gears gears.exe *.o */*.o

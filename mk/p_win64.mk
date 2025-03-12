@@ -4,6 +4,8 @@ include $(TOP)/version.mk
 
 TCLTK_PLATFORM = win
 
+PREFIX = C:/Gears
+
 CC = x86_64-w64-mingw32-gcc
 CFLAGS = -g -std=c99 -I../deps/include
 LDFLAGS = -mwindows -L../deps/lib
