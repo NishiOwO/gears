@@ -1,6 +1,6 @@
 include ../config.mk
 
-OBJS = main.o
+OBJS = main.o engine/core.o
 
 .PHONY: all clean
 .SUFFIXES: .c .o

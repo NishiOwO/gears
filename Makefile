@@ -1,13 +1,16 @@
 PLATFORM = generic
 
-.PHONY: all clean ./src
+.PHONY: all clean ./src ./deps
 
 all: ./src
 
-./config.mk: mk/p_$(PLATFORM).mk
+./config.mk:
 	cp mk/p_$(PLATFORM).mk $@
 
-./src:: ./config.mk
+./src:: ./config.mk ./deps
+	$(MAKE) -C $@
+
+./deps:: ./config.mk
 	$(MAKE) -C $@
 
 clean:

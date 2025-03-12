@@ -1,0 +1,4 @@
+/config.mk
+*.o
+/src/gears
+/src/gears.exe
