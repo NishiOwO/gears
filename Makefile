@@ -1,4 +1,5 @@
 PLATFORM = generic
+TOP = .
 
 include ./config.mk
 
@@ -10,12 +11,12 @@ all: ./src
 	cp mk/p_$(PLATFORM).mk $@
 
 ./src:: ./config.mk ./deps
-	$(MAKE) -C $@
+	$(MAKE) -C $@ TOP="`pwd`"
 
 ./deps:: ./config.mk
 	mkdir -p ./deps/include
 	mkdir -p ./deps/lib
-	if $(BUILD_DEPS); then $(MAKE) -C $@ ; fi
+	if $(BUILD_DEPS); then $(MAKE) -C $@ TOP="`pwd`" ; fi
 
 pack: all
 	rm -rf packed
@@ -27,6 +28,6 @@ pack: all
 	-cp deps/lib/*.dll packed/bin/
 
 clean:
-	$(MAKE) -C ./src clean
-	$(MAKE) -C ./deps clean
+	$(MAKE) -C ./src clean TOP="`pwd`"
+	$(MAKE) -C ./deps clean TOP="`pwd`"
 	rm -rf packed

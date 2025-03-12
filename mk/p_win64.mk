@@ -1,8 +1,7 @@
 # Win64 build
 
-TCLTK_VERSION = 8.6
-TCLTK_VERSION_NO_DOT = 86
-TCLTK_VERSION_FULL = 8.6.16
+include $(TOP)/version.mk
+
 TCLTK_PLATFORM = win
 
 CC = x86_64-w64-mingw32-gcc
