@@ -1,7 +1,14 @@
 PLATFORM = generic
 
-include ./mk/p_$(PLATFORM).mk
+.PHONY: all clean ./src
 
-.PHONY: all
+all: ./src
 
-all:  ./gears$(EXEC)
+./config.mk: mk/p_$(PLATFORM).mk
+	cp mk/p_$(PLATFORM).mk $@
+
+./src:: ./config.mk
+	$(MAKE) -C $@
+
+clean:
+	$(MAKE) -C $@ clean
