@@ -3,7 +3,7 @@ TOP = .
 
 include ./config.mk
 
-.PHONY: all clean pack ./src ./deps
+.PHONY: all clean format pack ./src ./deps
 
 all: ./src
 
@@ -17,6 +17,9 @@ all: ./src
 	mkdir -p ./deps/include
 	mkdir -p ./deps/lib
 	if $(BUILD_DEPS); then $(MAKE) -C $@ TOP="`pwd`" ; fi
+
+format:
+	clang-format --verbose -i `find src -name "*.c" -or -name "*.h"`
 
 pack: all
 	rm -rf packed
