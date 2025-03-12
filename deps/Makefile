@@ -33,7 +33,7 @@ install-tcl: ./tcl.timestamp
 	date > $@
 
 build-tcl: ./tcl$(TCLTK_VERSION_FULL)-src.tar.gz
-	if [ ! -f "./tcl$(TCLTK_VERSION_FULL)/$(TCLTK_PLATFORM)/Makefile" ] ; then cd tcl$(TCLTK_VERSION_FULL)/$(TCLTK_PLATFORM) && ./configure --prefix=`cd ../.. && pwd` --enable-threads CC=$(CC) RC=$(RC) ; fi
+	if [ ! -f "./tcl$(TCLTK_VERSION_FULL)/$(TCLTK_PLATFORM)/Makefile" ] ; then cd tcl$(TCLTK_VERSION_FULL)/$(TCLTK_PLATFORM) && ./configure --prefix=`cd ../.. && pwd` --enable-threads $(TCL_BUILD) ; fi
 	cd ./tcl$(TCLTK_VERSION_FULL)/$(TCLTK_PLATFORM) && $(MAKE)
 
 ### TARBALL ###
