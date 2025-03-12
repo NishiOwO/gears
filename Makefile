@@ -11,4 +11,4 @@ all: ./src
 	$(MAKE) -C $@
 
 clean:
-	$(MAKE) -C $@ clean
+	$(MAKE) -C ./src clean
