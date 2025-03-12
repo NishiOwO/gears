@@ -14,3 +14,4 @@ RC = x86_64-w64-mingw32-windres
 
 RAYLIB_BUILD = PLATFORM_OS=WINDOWS
 TCL_BUILD = --host=x86_64-w64-mingw32
+TK_BUILD = --host=x86_64-w64-mingw32

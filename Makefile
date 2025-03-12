@@ -24,7 +24,8 @@ pack: all
 	mkdir -p packed/lib
 	cp src/gears$(EXEC) packed/bin/
 	-cp deps/lib/*.so packed/lib/
-	-cp -rf deps/lib/tcl8.6 packed/lib/tcl8.6
+	-cp -rf deps/lib/tcl$(TCLTK_VERSION) packed/lib/tcl$(TCLTK_VERSION)
+	-cp -rf deps/lib/tk$(TCLTK_VERSION) packed/lib/tk$(TCLTK_VERSION)
 	-cp deps/lib/*.dll packed/bin/
 	-cp deps/bin/*.dll packed/bin/
 
