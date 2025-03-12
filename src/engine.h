@@ -15,5 +15,9 @@ void engine_log(const char* log);
 /* util.c */
 char* engine_strcat(const char* str1, const char* str2);
 char* engine_strcat3(const char* str1, const char* str2, const char* str3);
+char* engine_find_tcl(const char* path);
+
+/* tcl.c */
+int engine_tcl_init(void);
 
 #endif
