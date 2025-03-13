@@ -12,7 +12,7 @@ menu .menu.file -tearoff no
 
 ttk::frame .frame
 
-ttk::button .frame.test -text "test"
+ttk::button .frame.test -text "test" -command {destroy .}
 pack .frame -fill both -expand 1
 pack .frame.test -fill y -expand 1
 tkwait window .
