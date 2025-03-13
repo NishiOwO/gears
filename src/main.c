@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
 	printf("[Gears] Initializing raylib\n");
 
 	SetTraceLogLevel(100);
-	InitWindow(1024, 768, "Gears");
+	InitWindow(640, 480, "Gears");
 	if(!IsWindowReady()) {
 		fprintf(stderr, "[Gears] Window creation failure\n");
 		return 1;
